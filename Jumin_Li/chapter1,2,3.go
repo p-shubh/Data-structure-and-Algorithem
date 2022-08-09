@@ -14,6 +14,12 @@ func (h *Maxaheap) Insert(key int) {
 	h.Array = append(h.Array, key)
 	h.MaxaHeapifyup(len(h.Array) - 1)
 }
+func (h *Maxaheap) MaxaHeapifyup(index int) {
+	for h.Array[Parent(index)] < h.Array[index] {
+		h.Swap(Parent(index), index)
+		index = Parent(index)
+	}
+}
 
 //Extract return the largest key, add removes it from the heap
 
@@ -38,14 +44,6 @@ func (h *Maxaheap) Extract() int {
 }
 
 // maxheapify will heapify from bottom top
-
-func (h *Maxaheap) MaxaHeapifyup(index int) {
-	for h.Array[Parent(index)] < h.Array[index] {
-		h.Swap(Parent(index), index)
-		index = Parent(index)
-	}
-
-}
 
 // maxheapifyDown will be heapify top to bottam
 func (h *Maxaheap) MaxaHeapifyDown(index int) {
