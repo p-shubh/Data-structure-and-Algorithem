@@ -21,9 +21,9 @@ func (h Maxheap) MaxHeapifyUp(index int) {
 }
 
 func (h Maxheap) Parent(left_child_index int) int {
-	var Parent int
+	
 
-	Parent = (left_child_index - 1) / 2
+	Parent := (left_child_index - 1) / 2
 
 	return Parent
 
