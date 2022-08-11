@@ -7,7 +7,9 @@ import (
 
 func main() {
 
-	item := []int{1, 2, 3, 4, 5, 95, 78, 46, 58, 45, 86, 99, 251, 320}
+	item := []int{46, 58, 45, 86, 99, 251, 320}
+
+	fmt.Println("length of datalist", len(item))
 
 	fmt.Println("item", item)
 	sort.Sort(sort.Reverse(sort.IntSlice(item)))

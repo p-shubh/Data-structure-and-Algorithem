@@ -14,6 +14,9 @@ func (h *Maxaheap) Insert(key int) {
 	h.Array = append(h.Array, key)
 	h.MaxaHeapifyup(len(h.Array) - 1)
 }
+
+//Extract return the largest key, and removes it from the heap
+
 func (h *Maxaheap) MaxaHeapifyup(index int) {
 	for h.Array[Parent(index)] < h.Array[index] {
 		h.Swap(Parent(index), index)
@@ -21,7 +24,7 @@ func (h *Maxaheap) MaxaHeapifyup(index int) {
 	}
 }
 
-//Extract return the largest key, add removes it from the heap
+//Extract return the largest key, and removes it from the heap
 
 func (h *Maxaheap) Extract() int {
 	extracted := h.Array[0]
@@ -95,13 +98,13 @@ func main() {
 	fmt.Println(m)
 	buidHeap := []int{10, 20, 30, 5, 7, 9, 11, 13, 15, 17}
 
-	for v := range buidHeap {
+	for _, v := range buidHeap {
 		m.Insert(v)
 		fmt.Println(m)
 	}
 
-	for i := 0; i < 5; i++ {
-		m.Extract()
-		fmt.Println(m)
-	}
+	// for i := 0; i < 4; i++ {
+	// 	m.Extract()
+	// 	fmt.Println(m)
+	// }
 }
