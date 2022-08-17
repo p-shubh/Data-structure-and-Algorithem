@@ -34,4 +34,6 @@ func main() {
 	mylist.Prepend(node3)
 
 	fmt.Println(mylist)
+
+	
 }
